@@ -1,0 +1,11 @@
+<%inherit file="lab.xml"/>\
+<%def name="section_name()">Chapter 1 Lab</%def>\
+<%block name="hastexo_tests">\
+  <%text><test>
+    #!/bin/bash
+    # Check for login
+    logins=$(last training | grep training | wc -l)
+    [ $logins -ge 1 ] || exit 1
+    exit 0
+  </test></%text>\
+</%block>
