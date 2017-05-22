@@ -3,8 +3,8 @@
 <%block name="hastexo_tests">\
   <%text><test>
     #!/bin/bash
-    # Check for login
-    logins=$(last training | grep training | wc -l)
+    # Check for logins
+    logins=$(last ubuntu | grep ubuntu | wc -l)
     [ $logins -ge 1 ] || exit 1
     exit 0
   </test></%text>\
