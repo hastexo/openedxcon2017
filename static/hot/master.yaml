@@ -36,8 +36,6 @@ resources:
         manage_etc_hosts: localhost
         package_update: true
         package_upgrade: true
-        packages:
-          - mysql-server
         runcmd:
           - { get_attr: ['all_done_handle', 'curl_cli'] }
 
