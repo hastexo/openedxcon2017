@@ -1,5 +1,5 @@
 <%inherit file="lab.xml"/>\
-<%def name="section_name()">Chapter 1 Lab</%def>\
+<%def name="section_name()">Chapter 1 Lab 1</%def>\
 <%block name="hastexo_tests">\
   <%text><test>
     #!/bin/bash
