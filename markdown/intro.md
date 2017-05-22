@@ -41,3 +41,9 @@ Expected answers:
 - Docker
 - AWS (perhaps)
 - Strigo
+
+
+<!-- .slide: data-background-image="static/images/openstack-logo.svg" data-background-size="contain" -->
+
+
+<!-- .slide: data-background-image="static/images/overview.svg" data-background-size="contain" -->
