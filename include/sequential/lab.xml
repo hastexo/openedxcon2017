@@ -54,7 +54,7 @@ ${self.partials.conditional(
   url_name="${self.lab_url()}"
   stack_template_path="hot_lab.yaml"
   stack_user_name="ubuntu"
-  provider="city-kna1">
+  provider="default">
 ##
 ## "hastexo_tests" block.
 ##
