@@ -1,4 +1,4 @@
-## Get cracking! 
+## Get cracking!
 
 Enabling your learners to work hands-on with Open edX and
 OpenStack
@@ -30,7 +30,7 @@ Systems
 
 With lots of
 
-## Hands-On 
+## Hands-On
 
 Content
 
