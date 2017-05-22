@@ -4,7 +4,7 @@ parameters:
   flavor:
     type: string
     description: Flavor to use for servers
-    default: 1C-4GB-50GB
+    default: 1C-1GB-20GB
   public_net_id:
     type: string
     description: Public network ID
@@ -12,7 +12,7 @@ parameters:
   image:
     type: string
     description: Image ID or name
-    default: openedxcon2017-devstack
+    default: openedxcon2017-demo
   timeout:
     type: number
     description: Timeout for stack creation to finish
@@ -29,7 +29,7 @@ resources:
   all_done_handle:
     type: OS::Heat::WaitConditionHandle
 
-  devstack_config:
+  demo_config:
     type: OS::Heat::CloudConfig
     properties:
       cloud_config:
@@ -54,21 +54,6 @@ resources:
         direction: ingress
         port_range_min: 22
         port_range_max: 22
-      - remote_ip_prefix: 0.0.0.0/0
-        protocol: tcp
-        direction: ingress
-        port_range_min: 8000
-        port_range_max: 8000
-      - remote_ip_prefix: 0.0.0.0/0
-        protocol: tcp
-        direction: ingress
-        port_range_min: 8001
-        port_range_max: 8001
-      - remote_ip_prefix: 0.0.0.0/0
-        protocol: tcp
-        direction: ingress
-        port_range_min: 28010
-        port_range_max: 28010
 
   user_key:
     type: OS::Nova::KeyPair
@@ -111,19 +96,19 @@ resources:
       router_id: { get_resource: router }
       subnet_id: { get_resource: management_sub_net }
 
-  devstack:
+  demo:
     type: OS::Nova::Server
     properties:
-      name: devstack
+      name: demo
       image: { get_param: image }
       flavor: { get_param: flavor }
       key_name: { get_resource: user_key }
-      user_data:  { get_resource: devstack_config }
+      user_data:  { get_resource: demo_config }
       user_data_format: RAW
       networks:
-        - port: { get_resource: devstack_management_port }
+        - port: { get_resource: demo_management_port }
 
-  devstack_management_port:
+  demo_management_port:
     type: OS::Neutron::Port
     properties:
       network_id: { get_resource: management_net }
@@ -132,17 +117,17 @@ resources:
       security_groups:
         - { get_resource: server_security_group }
 
-  devstack_floating_ip:
+  demo_floating_ip:
     type: OS::Neutron::FloatingIP
     properties:
       floating_network_id: { get_param: public_net_id }
-      port_id: { get_resource: devstack_management_port }
+      port_id: { get_resource: demo_management_port }
       fixed_ip_address: 192.168.122.100
 
 outputs:
   public_ip:
-    description: Floating IP address of devstack in public network
-    value: { get_attr: [ devstack_floating_ip, floating_ip_address ] }
+    description: Floating IP address of demo in public network
+    value: { get_attr: [ demo_floating_ip, floating_ip_address ] }
   private_key:
     description: User private key
     value: { get_attr: [ user_key, private_key ] }
