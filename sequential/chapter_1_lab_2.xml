@@ -1,11 +1,10 @@
 <%inherit file="lab.xml"/>\
 <%def name="section_name()">Chapter 1 Lab 2</%def>\
+<%def name="conditional()">chapter_1_lab_1</%def>\
 <%block name="hastexo_tests">\
   <%text><test>
     #!/bin/bash
-    # Check for login
-    logins=$(last training | grep training | wc -l)
-    [ $logins -ge 1 ] || exit 1
-    exit 0
+    # Check mysql port
+    </dev/tcp/127.0.0.1/3306
   </test></%text>\
 </%block>
