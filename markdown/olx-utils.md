@@ -41,3 +41,35 @@ This is worse.
 
 
 # DRY
+olx-utils
+
+
+```bash
+pip install olx-utils
+```
+
+
+```bash
+$ ls include/ -R
+include/:
+course.xml  html  sequential
+
+include/html:
+content.html  lab.html
+
+include/sequential:
+content.xml  lab.xml
+```
+Mako templates in `include/`
+
+
+```bash
+new_run.py -b newrun 2017-05-01 2017-10-31
+```
+Creates Git branch `run/newrun`
+
+
+While we’re at it...
+
+
+<!-- .slide: data-background-image="static/images/markdown-mark.svg" data-background-size="contain" -->
