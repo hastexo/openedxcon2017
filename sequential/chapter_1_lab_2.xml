@@ -5,6 +5,6 @@
   <%text><test>
     #!/bin/bash
     # Check mysql port
-    </dev/tcp/127.0.0.1/3306
+    lsof -Pi :3306 -sTCP:LISTEN -t
   </test></%text>\
 </%block>
