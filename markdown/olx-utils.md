@@ -73,3 +73,8 @@ While we’re at it...
 
 
 <!-- .slide: data-background-image="static/images/markdown-mark.svg" data-background-size="contain" -->
+
+
+<!-- .slide: data-background-iframe="http://localhost:4200" data-background-size="contain" -->
+
+Note: Needs shellinaboxd, screen session.

@@ -103,3 +103,8 @@ sudo /edx/bin/pip.edxapp install hastexo-xblock
 </vertical>
 </sequential>
 ```
+
+
+<!-- .slide: data-background-iframe="http://localhost:4200" data-background-size="contain" -->
+
+Note: Needs shellinaboxd, screen session.
