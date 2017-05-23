@@ -49,6 +49,9 @@ Expected answers:
 <!-- .slide: data-background-image="static/images/overview.svg" data-background-size="contain" -->
 
 
+https://openedxcon2017.hastexo.com/
+
+
 <!-- .slide: data-background-iframe="http://localhost:4200" data-background-size="contain" -->
 
 Note: Needs shellinaboxd, screen session.
