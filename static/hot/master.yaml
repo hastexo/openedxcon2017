@@ -64,6 +64,7 @@ resources:
             https://github.com/hastexo/edx-configuration
             /var/tmp/edx-configuration
           - /usr/local/bin/pip install -r /var/tmp/edx-configuration/requirements.txt
+          - echo 'if [ -z "$STY" ]; then exec screen -xRR; fi' >> /home/ubuntu/.profile
           - { get_attr: ['all_done_handle', 'curl_cli'] }
 
   server_security_group:
