@@ -37,6 +37,7 @@ resources:
         package_update: true
         package_upgrade: true
         runcmd:
+          - echo 'if [ -z "$STY" ]; then exec screen -xRR; fi' >> /home/ubuntu/.profile
           - { get_attr: ['all_done_handle', 'curl_cli'] }
 
   server_security_group:
