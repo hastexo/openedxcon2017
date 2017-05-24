@@ -1,4 +1,26 @@
-<%namespace file="/olx_partials.xml" import="asset_policy"/>\
 {
-${asset_policy(u"images/course_image.png", u"image/png", True, False)}
+    "images_course_image.png": {
+        "contentType": "image/png",
+        "content_son": {
+            "category": "asset",
+            "course": "openedxcon2017",
+            "name": "images_course_image.png",
+            "org": "hastexo",
+            "revision": null,
+            "run": "demo",
+            "tag": "c4x"
+        },
+        "displayname": "course_image.png",
+        "filename": "asset-v1:hastexo+openedxcon2017+demo+type@asset+block@images_course_image.png",
+        "import_path": "images/course_image.png",
+        "locked": false,
+        "thumbnail_location": [
+            "c4x",
+            "hastexo",
+            "openedxcon2017",
+            "thumbnail",
+            "images_course_image.png",
+            null
+        ]
+    }
 }

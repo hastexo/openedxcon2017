@@ -1,10 +1,36 @@
-<%inherit file="lab.xml"/>\
-<%def name="section_name()">Chapter 1 Lab 2</%def>\
-<%def name="conditional()">chapter_1_lab_1</%def>\
-<%block name="hastexo_tests">\
-  <%text><test>
+<sequential
+  url_name="chapter_1_lab_2"
+  display_name="Chapter 1 Lab 2"
+  graded="true"
+  format="Lab">
+
+<vertical
+  url_name="chapter_1_lab_2_unit"
+  display_name="Lab">
+
+<html
+  url_name="chapter_1_lab_2_instructions"
+  filename="chapter_1_lab_2_instructions"
+  display_name="Chapter 1 Lab 2 Instructions"/>
+
+<conditional
+  sources="block-v1:hastexo+openedxcon2017+demo+type@hastexo+block@chapter_1_lab_1"
+  correct="True"
+  message="You must complete {link} before this exercise will be made available.">
+<hastexo
+  display_name="Chapter 1 Lab 2"
+  url_name="chapter_1_lab_2"
+  stack_template_path="hot_lab.yaml"
+  stack_user_name="ubuntu"
+  provider="default">
+  <test>
     #!/bin/bash
     # Check mysql port
     lsof -Pi :3306 -sTCP:LISTEN -t
-  </test></%text>\
-</%block>
+  </test>
+</hastexo>
+</conditional>
+
+</vertical>
+
+</sequential>

@@ -1,6 +1,10 @@
-<%def name='path()'>markdown/${filename}.md</%def>\
-<%block name="html">
+
 <div class="lab_instructions">
-${olx_helpers.markdown_file(capture(self.path))}
+<h2>Lab 2 Instructions</h2>
+
+<p>Install the <code>mysql</code> server as follows:</p>
+
+<pre><code>sudo apt-get install mysql-server
+</code></pre>
 </div>
-</%block>
+

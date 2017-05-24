@@ -1,11 +1,33 @@
-<%inherit file="lab.xml"/>\
-<%def name="section_name()">Chapter 1 Lab 1</%def>\
-<%block name="hastexo_tests">\
-  <%text><test>
+<sequential
+  url_name="chapter_1_lab_1"
+  display_name="Chapter 1 Lab 1"
+  graded="true"
+  format="Lab">
+
+<vertical
+  url_name="chapter_1_lab_1_unit"
+  display_name="Lab">
+
+<html
+  url_name="chapter_1_lab_1_instructions"
+  filename="chapter_1_lab_1_instructions"
+  display_name="Chapter 1 Lab 1 Instructions"/>
+
+<hastexo
+  display_name="Chapter 1 Lab 1"
+  url_name="chapter_1_lab_1"
+  stack_template_path="hot_lab.yaml"
+  stack_user_name="ubuntu"
+  provider="default">
+  <test>
     #!/bin/bash
     # Check for logins
     logins=$(last ubuntu | grep ubuntu | wc -l)
     [ $logins -ge 1 ] || exit 1
     exit 0
-  </test></%text>\
-</%block>
+  </test>
+</hastexo>
+
+</vertical>
+
+</sequential>
